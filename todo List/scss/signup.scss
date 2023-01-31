@@ -1,0 +1,175 @@
+$background-color: #FFD370;
+$text-color: #333333;
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+body {
+  background-color: $background-color;
+}
+
+.signUpAccount {
+
+  max-width: 375px;
+  min-height: 608px;
+
+  .header {
+    margin: 48px auto 0px auto;
+    box-sizing: border-box;
+    position: relative;
+    height: 60px;
+    .logo-1 {
+      width: 33.87px;
+      height: 33.87px;
+      position: absolute;
+      left: 13%;
+    }
+    .logo-2 {
+      width: 33.82px;
+      height: 26.12px;
+      position: absolute;
+      left: 15%;
+      transform: rotate(-9.39deg);
+    }
+    .title {
+      width: 265px;
+      height: 41.41px;
+      font-family: 'Baloo Thambi 2';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 50px;
+      position: absolute;
+      left: 25%;
+      right: 0%;
+      top: 0%;
+      bottom: 11.69%;
+      text-transform: uppercase;
+    }
+  }
+  .slogan {
+    height: 29px;
+    margin: 5px 73px 32px 62px;
+    text-align: center;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 29px;
+  }
+  .form {
+    .box-1 {
+      display: flex;
+      flex-direction: column;
+      label {
+        width: 40px;
+        height: 20px;
+        margin: 0px 303px 4px 32px;
+        font-style: normal;
+        font-weight: 700;
+      }
+      input {
+        padding: 12px 16px;
+        gap: 10px;
+        width: 295px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        margin: 0 10px 0 20px;
+      }
+      .warn {
+        width: 105px;
+        font-family: 'Noto Sans TC';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        height: 20px;
+        margin: 5px 200px 10px 20px;
+        color: #D87355;
+      }
+    }
+    .box-2 {
+      display: flex;
+      flex-direction: column;
+      label {
+        width: 60px;
+        height: 20px;
+        margin: 0px 303px 4px 32px;
+        font-style: normal;
+        font-weight: 700;
+      }
+      input {
+        padding: 12px 16px;
+        gap: 10px;
+        width: 295px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        margin: 0 10px 0 20px;
+      }
+    }
+    .login-btn {
+      width: 160px;
+      height: 47px;
+      background: #333333;
+      border-radius: 10px;
+      color: white;
+      margin: 25px 108px 24px 107px;
+      padding: 12px;
+    }
+    .account {
+      width: 64px;
+      height: 23px;
+      margin: 0px 171px 134px 172px;
+      a {
+        text-decoration: none;
+        font-family: 'Noto Sans TC';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 16px;
+        line-height: 23px;
+        color: #333333;
+      }
+    }
+    .box-3 {
+      display: flex;
+      flex-direction: column;
+      label {
+        width: 60px;
+        height: 20px;
+        margin: 16px 303px 4px 32px;
+        font-style: normal;
+        font-weight: 700;
+      }
+      input {
+        padding: 12px 16px;
+        gap: 10px;
+        width: 295px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        margin: 0 10px 0 20px;
+      }
+    }
+    .box-4 {
+      display: flex;
+      flex-direction: column;
+      label {
+        width: 90px;
+        height: 20px;
+        margin: 16px 303px 4px 32px;
+        font-style: normal;
+        font-weight: 700;
+      }
+      input {
+        padding: 12px 16px;
+        gap: 10px;
+        width: 295px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        margin: 0 10px 0 20px;
+      }
+    }
+  }
+}

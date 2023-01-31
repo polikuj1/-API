@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="scss/style.css">
+  
+  <title>登入</title>
+</head>
+<body>
+  <!-- 登入畫面 -->
+  <div class="loginPage ">
+    <div class="left-colum">
+      <div class="header">
+      <img src="img/logo1.png" alt="框框" class="logo-1">
+      <img src="img/logo.png" alt="打勾" class="logo-2">
+      <div class="title">online todo list</div>
+      </div>
+    <div class="image"><img src="img/img.png" alt="主圖片"></div>
+    </div>
+    <div class="right-colum">
+      <div class="slogan">最實用的線上代辦事項服務</div>
+      <div class="form">
+        <form action="">
+          <div class="box-1">
+            <label for="email" >Email</label>
+            <input type="text" placeholder="請輸入Email" name="信箱" id="email" required>
+            <div class="warn-1"></div>
+          </div>
+          <div class="box-2">
+            <label for="password" >Password</label>
+            <input type="password" placeholder="請輸入密碼" name="密碼" id="password">
+          </div>
+          <input type="button" value="登入" class="loginPagelogin-btn"><a href="#">
+          <div class="loginPagesignup-btn"><a href="#">註冊帳號</a></div>
+        </form>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- 註冊畫面 -->
+  <div class="signUpPage change-page">
+    <div class="left-colum">
+      <div class="header">
+      <img src="img/logo1.png" alt="框框" class="logo-1">
+      <img src="img/logo.png" alt="打勾" class="logo-2">
+      <div class="title">online todo list</div>
+      </div>
+      <div class="image"><img src="img/img.png" alt="主圖片"></div>
+    </div>
+    <div class="right-colum">
+      <div class="slogan">註冊帳號</div>
+      <div class="form-2">
+        <form action="">
+          <div class="box-1">
+            <label for="" >Email</label>
+            <input type="text" placeholder="請輸入Email" name="信箱" class="email">
+            <div class="warn-2"></div>
+          </div>
+          <div class="box-2">
+            <label for="" name="暱稱">你的暱稱</label>
+            <input type="text" placeholder="請輸入暱稱" name="暱稱" class="nickname">
+          </div>
+          <div class="box-3">
+            <label for="" name="密碼">密碼</label>
+            <input type="password" placeholder="請輸入密碼" name="密碼" class="password">
+          </div>
+          <div class="box-4">
+            <label for="" name="密碼">再次輸入密碼</label>
+            <input type="password" placeholder="請再次輸入密碼" name="密碼" class="check-password">
+          </div>
+          <input type="button" value="註冊帳號" class="signUpPagesignup-btn"><a href="#">
+          <div class="signUpPagelogin-btn"><a href="#">登入</a></div>
+        </form>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- 清單畫面 -->
+  <div class="todoList change-page">
+    <div class="header">
+      <div class="left-bar">
+        <img src="img/logo1.png" alt="框框" class="logo-1">
+        <img src="img/logo.png" alt="打勾" class="logo-2">
+        <div class="title">online todo list</div>
+      </div>
+      <div class="right-bar">
+        <p>王曉明的代辦</p>
+        <a href="#" class="log-out">登出</a>
+      </div>
+    </div>
+    <div class="list-box">
+      <div class="add-box">
+        <input type="input"  placeholder="請新增代辦事項">
+        <a href="#"><img src="img/logo2.png" alt=""></a>
+      </div>
+      <div class="noTodo">
+          <!-- <p class="">目前尚無代辦事項</p>
+          <div><img src="img/empty 1.png" alt=""></div> -->
+      </div>
+      <div class="list">
+        <ul class="tab">
+          <li class="active">全部</li>
+          <li>待完成</li>
+          <li>已完成</li>
+        </ul>
+        
+        <ul class="todowhat">
+          
+          <!-- <li>
+            <label class="checkbox" >
+              <input type="checkbox">
+              <span>把冰箱發霉的檸檬拿去丟</span>
+              <a href="#" class="delete"><img src="img/Vector.png" alt=""></a>
+            </label>
+          </li> -->
+          
+        </ul>
+        <div class="footer">
+          <p class="item-num">個待完成項目</p>
+          <a href="#" class="clearFinished">清除已完成項目</a>
+        </div>
+      </div>
+    </div>
+    
+    
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

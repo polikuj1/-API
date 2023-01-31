@@ -1,0 +1,747 @@
+$background-color: #FFD370;
+$text-color: #333333;
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  background-color: $background-color;
+}
+
+
+//登入頁面
+.loginPage {
+
+  max-width: 375px;
+  max-height: 608px;
+  margin: 0 auto;
+  .header {
+    margin: 48px auto 0px auto;
+    box-sizing: border-box;
+    position: relative;
+    height: 60px;
+    .logo-1 {
+      width: 33.87px;
+      height: 33.87px;
+      position: absolute;
+      left: 13%;
+    }
+    .logo-2 {
+      width: 33.82px;
+      height: 26.12px;
+      position: absolute;
+      left: 15%;
+      transform: rotate(-9.39deg);
+    }
+    .title {
+      width: 265px;
+      height: 41.41px;
+      font-family: 'Baloo Thambi 2';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 50px;
+      position: absolute;
+      left: 25%;
+      right: 0%;
+      top: 0%;
+      bottom: 11.69%;
+      text-transform: uppercase;
+    }
+  }
+  .slogan {
+    height: 29px;
+    margin: 5px 73px 32px 62px;
+    text-align: center;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 29px;
+  }
+  .image {
+    display: none;
+  }
+  .form {
+    .box-1 {
+      display: flex;
+      flex-direction: column;
+      label {
+        width: 40px;
+        height: 20px;
+        margin: 0px 303px 4px 32px;
+        font-family: 'Noto Sans TC';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+      }
+      input {
+        padding: 12px 16px;
+        gap: 10px;
+        width: 304px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        margin: 0 10px 0 20px;
+      }
+      .warn {
+        width: 105px;
+        font-family: 'Noto Sans TC';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        height: 20px;
+        margin: 5px 200px 10px 20px;
+        color: #D87355;
+      }
+    }
+    .box-2 {
+      display: flex;
+      flex-direction: column;
+      label {
+        width: 40px;
+        height: 20px;
+        margin: 0px 303px 4px 32px;
+        font-family: 'Noto Sans TC';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+      }
+      input {
+        padding: 12px 16px;
+        gap: 10px;
+        width: 304px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        margin: 0 10px 0 20px;
+      }
+    }
+    .loginPagelogin-btn {
+      width: 128px;
+      height: 47px;
+      background: #333333;
+      border-radius: 10px;
+      color: white;
+      margin: 27px 124px 24px 123px;
+      font-family: 'Noto Sans TC';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 23px;
+      text-align: center;
+    }
+    .loginPagesignup-btn {
+      width: 64px;
+      height: 23px;
+      margin: 0px 156px 134px 155px;
+      a {
+        text-decoration: none;
+        font-family: 'Noto Sans TC';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 23px;
+        color: #333333;
+      }
+    }
+  }
+}
+
+@media (min-width:1024px) {
+  .loginPage {
+    max-width: 1024px;
+    margin: 0;
+    display: flex;
+    .left-colum {
+      display: flex;
+      flex-direction: column;
+      .header {
+        width: 386px;
+        margin: 87px 0 20px 116px;
+      }
+      .image {
+        width: 386px;
+        height: 386px;
+        display: block;
+        margin: 0 0 87px 116px;
+        padding-top: 20px;
+      }
+    }
+    .right-colum {
+      height: 386px;
+      margin: 149px 116px 87px 106px;
+      .slogan {
+        width: 288px;
+        margin: 0 0 20px 20px;
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+
+
+
+//註冊頁面
+.signUpPage {
+  max-width: 375px;
+  max-height: 622px;
+  margin: 0 auto;
+  .header {
+    margin: 48px auto 0px auto;
+    box-sizing: border-box;
+    position: relative;
+    height: 60px;
+    .logo-1 {
+      width: 33.87px;
+      height: 33.87px;
+      position: absolute;
+      left: 13%;
+    }
+    .logo-2 {
+      width: 33.82px;
+      height: 26.12px;
+      position: absolute;
+      left: 15%;
+      transform: rotate(-9.39deg);
+    }
+    .title {
+      width: 265px;
+      height: 41.41px;
+      font-family: 'Baloo Thambi 2';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 50px;
+      position: absolute;
+      left: 25%;
+      right: 0%;
+      top: 0%;
+      bottom: 11.69%;
+      text-transform: uppercase;
+    }
+  }
+  .image {
+    display: none;
+  }
+  .slogan {
+    height: 29px;
+    margin: 5px 73px 32px 62px;
+    text-align: center;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 29px;
+  }
+  .form-2 {
+    .box-1 {
+      display: flex;
+      flex-direction: column;
+      label {
+        width: 40px;
+        height: 20px;
+        margin: 0px 303px 4px 32px;
+        font-style: normal;
+        font-weight: 700;
+      }
+      input {
+        padding: 12px 16px;
+        gap: 10px;
+        width: 295px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        margin: 0 10px 0 20px;
+      }
+      .warn-2 {
+        width: 105px;
+        font-family: 'Noto Sans TC';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        height: 20px;
+        margin: 5px 200px 10px 20px;
+        color: #D87355;
+      }
+    }
+    .box-2 {
+      display: flex;
+      flex-direction: column;
+      label {
+        width: 60px;
+        height: 20px;
+        margin: 0px 303px 4px 32px;
+        font-style: normal;
+        font-weight: 700;
+      }
+      input {
+        padding: 12px 16px;
+        gap: 10px;
+        width: 295px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        margin: 0 10px 0 20px;
+      }
+    }
+    .signUpPagesignup-btn {
+      width: 160px;
+      height: 47px;
+      background: #333333;
+      border-radius: 10px;
+      color: white;
+      margin: 25px 108px 24px 107px;
+      padding: 12px;
+      font-family: 'Noto Sans TC';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 23px;
+      text-align: center;
+    }
+    .signUpPagelogin-btn {
+      width: 64px;
+      height: 23px;
+      margin: 0px 171px 134px 172px;
+      a {
+        text-decoration: none;
+        font-family: 'Noto Sans TC';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 16px;
+        line-height: 23px;
+        color: #333333;
+      }
+    }
+    .box-3 {
+      display: flex;
+      flex-direction: column;
+      label {
+        width: 60px;
+        height: 20px;
+        margin: 16px 303px 4px 32px;
+        font-style: normal;
+        font-weight: 700;
+      }
+      input {
+        padding: 12px 16px;
+        gap: 10px;
+        width: 295px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        margin: 0 10px 0 20px;
+      }
+    }
+    .box-4 {
+      display: flex;
+      flex-direction: column;
+      label {
+        width: 90px;
+        height: 20px;
+        margin: 16px 303px 4px 32px;
+        font-style: normal;
+        font-weight: 700;
+      }
+      input {
+        padding: 12px 16px;
+        gap: 10px;
+        width: 295px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        margin: 0 10px 0 20px;
+      }
+    }
+  }
+}
+
+@media (min-width:1024px) {
+  .signUpPage {
+    max-width: 1024px;
+    min-height: 670px;
+    margin: 0;
+    display: flex;
+    .left-colum {
+      display: flex;
+      flex-direction: column;
+      .header {
+        width: 386px;
+        margin: 100px 0 0px 116px;
+      }
+      .image {
+        width: 386px;
+        height: 386px;
+        display: block;
+        margin: 0 0 87px 116px;
+      }
+    }
+    .right-colum {
+      height: 386px;
+      margin: 81px 116px 80px 103px;
+      .slogan {
+        width: 288px;
+        margin: 0 0 24px 20px;
+        text-align: left;
+        font-size: 24px;
+      }
+      .form {
+        .signUpPagesignup-btn {
+          margin: 25px 108px 24px 90px;
+        }
+        .signUpPagelogin-btn {
+          margin: 0px 171px 134px 155px;
+        }
+      }
+    }
+  }
+}
+
+
+//清單畫面
+.todoList {
+  max-width: 375px;
+  max-height: 608px;
+  margin: 0 auto;
+  //header
+  .header {
+    width: 100%;
+    height: 37px;
+    margin: 17.45px 32px 16.55px 32.42px;
+    max-width: 311px;
+    position: relative;
+    // display: flex;
+    .logo-1 {
+      width: 28.3px;
+      height: 28.3px;
+      position: absolute;
+      margin-top: 10px;
+    }
+    .logo-2 {
+      width: 28.26px;
+      height: 21.82px;
+      position: absolute;
+      margin-top: 9px;
+      margin-left: 5px;
+    }
+    .title {
+      font-family: 'Baloo Thambi 2';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 38px;
+      color: #333333;
+      margin-left: 38px;
+      margin-top: 5px;
+      text-transform: uppercase;
+    }
+    .right-bar {
+      p {
+        display: none;
+        font-family: 'Noto Sans TC';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 23px;
+        color: #333333;
+      }
+      .log-out {
+        width: 40px;
+        height: 20px;
+        position: absolute;
+        top: 13px;
+        margin-left: 280px;
+        font-family: 'Noto Sans TC';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #333333;
+      }
+    }  
+  }
+  //新增輸入欄位
+  .add-box {
+    margin: 0px 32px 16px 32px;
+    position: relative;
+    input {
+      width: 311px;
+      height: 47px;
+      padding-left: 10px;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+      border-radius: 10px;
+      font-family: 'Noto Sans TC';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 23px;
+      &::placeholder {
+        color: grey;
+        padding-left: 10px;
+      }
+    }
+    a {
+      width: 40px;
+      height: 39px;
+      right: 4px;
+      top: 4px;
+      position: absolute;
+      background: #333333;
+      border-radius: 10px;
+      text-align: center;
+      line-height: 50px;
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  .noTodo {
+    p {
+      margin-left: 95px;
+      margin-top: 20px;
+    }
+    div > img {
+      width: 240px;
+      height: 250px;
+      margin-left: 40px;
+    }
+  }
+  // 清單表格
+  .list {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    width: 311px;
+    margin: 0 32px 36px 32px;
+    //狀態欄
+    .tab {
+      display: flex;
+      justify-content: space-evenly;
+      height: 50px;
+      font-family: 'Noto Sans TC';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 20px;
+      color: #9F9A91;
+      li {
+        width: 100%;
+        text-align: center;
+        margin-top: 16px;
+        border-bottom: 2px solid #EFEFEF;
+        &.active {
+          border-bottom: 2px solid #333333;
+          color: #333333;
+        }
+      }
+    }
+    .todowhat {
+      .checkbox:hover a {
+        display: inline-block;
+      }
+      .checkbox {
+        width: 310px;
+        display: block;
+        margin-top: 1rem;
+        position: relative;
+        input {
+          margin-left: 1rem;
+          width: 20px;
+          height: 20px;
+        }
+        input:checked + span{
+          text-decoration: line-through;
+          color: grey;
+        }
+        span {
+          font-family: 'Noto Sans TC';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 20px;
+          margin-left: 10px;
+        }
+        a {
+          display: none;
+          position: absolute;
+          right: 10px;
+          top: 10px;
+        }
+      }
+    }
+    //清單內容
+    //footer
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      p {
+        width: 100%;
+        margin: 25px 30px 24px 16px;
+        font-family: 'Noto Sans TC';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #333333;
+      }
+      a {
+        width: 100%;
+        // margin: 25px 16px 24px 70px;
+        font-family: 'Noto Sans TC';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #9F9A91;
+        text-align: center;
+      }
+      a:hover {
+        color: red;
+      }
+    }
+  }
+}
+
+@media (min-width:1024px) {
+  body {
+    background: linear-gradient(172.7deg, #FFD370 5.12%, #FFD370 53.33%, #FFD370 53.44%, #FFFFFF 53.45%, #FFFFFF 94.32%);
+  }
+  .todoList {
+    max-width: 1028px;
+    min-height: 736px;
+    margin: 0 auto;
+    .header {
+      display: flex;
+      margin: 0;
+      margin-right: 0;
+      .left-bar {
+        width: 100%;
+        margin-left: 30px;
+        margin-top: 10px;
+        .title {
+          width: 230px;
+          height: 37px;
+        }
+      }
+      .right-bar {
+        width: 100%;
+        p {
+          display: block;
+          width: 96px;
+          height: 23px;
+          margin-top: 30px;
+          margin-left: 530px;
+        }
+        .log-out {
+          margin-left: 664px;
+          top: 30px;
+        }
+      }
+    }
+    .list-box {
+      width: 500px;
+      height: 464px;
+      position: absolute;
+      left: 25%;
+      top: 15%;
+      .add-box {
+        width: 500px;
+        input {
+          width: 500px;
+        }
+      }
+      .noTodo {
+        background: none;
+        p {
+          margin-left: 200px;
+        }
+        img {
+          margin-left: 140px;
+          margin-top: 20px;
+        }
+      }
+      .list {
+        width: 500px;
+        .footer {
+          p {
+            margin-left: 25px;
+          }
+          a {
+            margin-left: 100px;
+          }
+        }
+        .todowhat {
+          margin-left: 25px;
+          margin-top: 25px;
+          position: relative;
+          .checkbox {
+            width: 475px;
+            display: block;
+            cursor: pointer;
+          }
+          .checkbox:hover .delete {
+            display: inline-block;
+          }
+          .delete {
+            position: absolute;
+            right: 30px;
+            top: 15px;
+            font-size: 20px;
+            display: none;
+            width: 14px;
+            height: 14px;
+          }
+          hr {
+            margin-top: 15px;
+          }
+          input {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 10px;
+            cursor: pointer;
+            
+          }
+          input:checked + span{
+            text-decoration: line-through;
+            color: grey;
+          }
+          span {
+            font-family: 'Noto Sans TC';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 14px;
+            margin-left: 60px;
+            padding: 1rem 0;
+            display: block;
+            border-bottom: 2px solid #E5E5E5;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+//切換頁面
+.change-page {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+

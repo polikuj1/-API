@@ -1,0 +1,710 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  background-color: #FFD370;
+}
+
+.loginPage {
+  max-width: 375px;
+  max-height: 608px;
+  margin: 0 auto;
+}
+.loginPage .header {
+  margin: 48px auto 0px auto;
+  box-sizing: border-box;
+  position: relative;
+  height: 60px;
+}
+.loginPage .header .logo-1 {
+  width: 33.87px;
+  height: 33.87px;
+  position: absolute;
+  left: 13%;
+}
+.loginPage .header .logo-2 {
+  width: 33.82px;
+  height: 26.12px;
+  position: absolute;
+  left: 15%;
+  transform: rotate(-9.39deg);
+}
+.loginPage .header .title {
+  width: 265px;
+  height: 41.41px;
+  font-family: "Baloo Thambi 2";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 50px;
+  position: absolute;
+  left: 25%;
+  right: 0%;
+  top: 0%;
+  bottom: 11.69%;
+  text-transform: uppercase;
+}
+.loginPage .slogan {
+  height: 29px;
+  margin: 5px 73px 32px 62px;
+  text-align: center;
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 29px;
+}
+.loginPage .image {
+  display: none;
+}
+.loginPage .form .box-1 {
+  display: flex;
+  flex-direction: column;
+}
+.loginPage .form .box-1 label {
+  width: 40px;
+  height: 20px;
+  margin: 0px 303px 4px 32px;
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+}
+.loginPage .form .box-1 input {
+  padding: 12px 16px;
+  gap: 10px;
+  width: 304px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  margin: 0 10px 0 20px;
+}
+.loginPage .form .box-1 .warn {
+  width: 105px;
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  height: 20px;
+  margin: 5px 200px 10px 20px;
+  color: #D87355;
+}
+.loginPage .form .box-2 {
+  display: flex;
+  flex-direction: column;
+}
+.loginPage .form .box-2 label {
+  width: 40px;
+  height: 20px;
+  margin: 0px 303px 4px 32px;
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+}
+.loginPage .form .box-2 input {
+  padding: 12px 16px;
+  gap: 10px;
+  width: 304px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  margin: 0 10px 0 20px;
+}
+.loginPage .form .loginPagelogin-btn {
+  width: 128px;
+  height: 47px;
+  background: #333333;
+  border-radius: 10px;
+  color: white;
+  margin: 27px 124px 24px 123px;
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 23px;
+  text-align: center;
+}
+.loginPage .form .loginPagesignup-btn {
+  width: 64px;
+  height: 23px;
+  margin: 0px 156px 134px 155px;
+}
+.loginPage .form .loginPagesignup-btn a {
+  text-decoration: none;
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 23px;
+  color: #333333;
+}
+
+@media (min-width: 1024px) {
+  .loginPage {
+    max-width: 1024px;
+    margin: 0;
+    display: flex;
+  }
+  .loginPage .left-colum {
+    display: flex;
+    flex-direction: column;
+  }
+  .loginPage .left-colum .header {
+    width: 386px;
+    margin: 87px 0 20px 116px;
+  }
+  .loginPage .left-colum .image {
+    width: 386px;
+    height: 386px;
+    display: block;
+    margin: 0 0 87px 116px;
+    padding-top: 20px;
+  }
+  .loginPage .right-colum {
+    height: 386px;
+    margin: 149px 116px 87px 106px;
+  }
+  .loginPage .right-colum .slogan {
+    width: 288px;
+    margin: 0 0 20px 20px;
+    font-size: 24px;
+  }
+}
+.signUpPage {
+  max-width: 375px;
+  max-height: 622px;
+  margin: 0 auto;
+}
+.signUpPage .header {
+  margin: 48px auto 0px auto;
+  box-sizing: border-box;
+  position: relative;
+  height: 60px;
+}
+.signUpPage .header .logo-1 {
+  width: 33.87px;
+  height: 33.87px;
+  position: absolute;
+  left: 13%;
+}
+.signUpPage .header .logo-2 {
+  width: 33.82px;
+  height: 26.12px;
+  position: absolute;
+  left: 15%;
+  transform: rotate(-9.39deg);
+}
+.signUpPage .header .title {
+  width: 265px;
+  height: 41.41px;
+  font-family: "Baloo Thambi 2";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 50px;
+  position: absolute;
+  left: 25%;
+  right: 0%;
+  top: 0%;
+  bottom: 11.69%;
+  text-transform: uppercase;
+}
+.signUpPage .image {
+  display: none;
+}
+.signUpPage .slogan {
+  height: 29px;
+  margin: 5px 73px 32px 62px;
+  text-align: center;
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 29px;
+}
+.signUpPage .form-2 .box-1 {
+  display: flex;
+  flex-direction: column;
+}
+.signUpPage .form-2 .box-1 label {
+  width: 40px;
+  height: 20px;
+  margin: 0px 303px 4px 32px;
+  font-style: normal;
+  font-weight: 700;
+}
+.signUpPage .form-2 .box-1 input {
+  padding: 12px 16px;
+  gap: 10px;
+  width: 295px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  margin: 0 10px 0 20px;
+}
+.signUpPage .form-2 .box-1 .warn-2 {
+  width: 105px;
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  height: 20px;
+  margin: 5px 200px 10px 20px;
+  color: #D87355;
+}
+.signUpPage .form-2 .box-2 {
+  display: flex;
+  flex-direction: column;
+}
+.signUpPage .form-2 .box-2 label {
+  width: 60px;
+  height: 20px;
+  margin: 0px 303px 4px 32px;
+  font-style: normal;
+  font-weight: 700;
+}
+.signUpPage .form-2 .box-2 input {
+  padding: 12px 16px;
+  gap: 10px;
+  width: 295px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  margin: 0 10px 0 20px;
+}
+.signUpPage .form-2 .signUpPagesignup-btn {
+  width: 160px;
+  height: 47px;
+  background: #333333;
+  border-radius: 10px;
+  color: white;
+  margin: 25px 108px 24px 107px;
+  padding: 12px;
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 23px;
+  text-align: center;
+}
+.signUpPage .form-2 .signUpPagelogin-btn {
+  width: 64px;
+  height: 23px;
+  margin: 0px 171px 134px 172px;
+}
+.signUpPage .form-2 .signUpPagelogin-btn a {
+  text-decoration: none;
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 23px;
+  color: #333333;
+}
+.signUpPage .form-2 .box-3 {
+  display: flex;
+  flex-direction: column;
+}
+.signUpPage .form-2 .box-3 label {
+  width: 60px;
+  height: 20px;
+  margin: 16px 303px 4px 32px;
+  font-style: normal;
+  font-weight: 700;
+}
+.signUpPage .form-2 .box-3 input {
+  padding: 12px 16px;
+  gap: 10px;
+  width: 295px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  margin: 0 10px 0 20px;
+}
+.signUpPage .form-2 .box-4 {
+  display: flex;
+  flex-direction: column;
+}
+.signUpPage .form-2 .box-4 label {
+  width: 90px;
+  height: 20px;
+  margin: 16px 303px 4px 32px;
+  font-style: normal;
+  font-weight: 700;
+}
+.signUpPage .form-2 .box-4 input {
+  padding: 12px 16px;
+  gap: 10px;
+  width: 295px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  margin: 0 10px 0 20px;
+}
+
+@media (min-width: 1024px) {
+  .signUpPage {
+    max-width: 1024px;
+    min-height: 670px;
+    margin: 0;
+    display: flex;
+  }
+  .signUpPage .left-colum {
+    display: flex;
+    flex-direction: column;
+  }
+  .signUpPage .left-colum .header {
+    width: 386px;
+    margin: 100px 0 0px 116px;
+  }
+  .signUpPage .left-colum .image {
+    width: 386px;
+    height: 386px;
+    display: block;
+    margin: 0 0 87px 116px;
+  }
+  .signUpPage .right-colum {
+    height: 386px;
+    margin: 81px 116px 80px 103px;
+  }
+  .signUpPage .right-colum .slogan {
+    width: 288px;
+    margin: 0 0 24px 20px;
+    text-align: left;
+    font-size: 24px;
+  }
+  .signUpPage .right-colum .form .signUpPagesignup-btn {
+    margin: 25px 108px 24px 90px;
+  }
+  .signUpPage .right-colum .form .signUpPagelogin-btn {
+    margin: 0px 171px 134px 155px;
+  }
+}
+.todoList {
+  max-width: 375px;
+  max-height: 608px;
+  margin: 0 auto;
+}
+.todoList .header {
+  width: 100%;
+  height: 37px;
+  margin: 17.45px 32px 16.55px 32.42px;
+  max-width: 311px;
+  position: relative;
+}
+.todoList .header .logo-1 {
+  width: 28.3px;
+  height: 28.3px;
+  position: absolute;
+  margin-top: 10px;
+}
+.todoList .header .logo-2 {
+  width: 28.26px;
+  height: 21.82px;
+  position: absolute;
+  margin-top: 9px;
+  margin-left: 5px;
+}
+.todoList .header .title {
+  font-family: "Baloo Thambi 2";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 38px;
+  color: #333333;
+  margin-left: 38px;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+.todoList .header .right-bar p {
+  display: none;
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 23px;
+  color: #333333;
+}
+.todoList .header .right-bar .log-out {
+  width: 40px;
+  height: 20px;
+  position: absolute;
+  top: 13px;
+  margin-left: 280px;
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
+}
+.todoList .add-box {
+  margin: 0px 32px 16px 32px;
+  position: relative;
+}
+.todoList .add-box input {
+  width: 311px;
+  height: 47px;
+  padding-left: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+}
+.todoList .add-box input::-moz-placeholder {
+  color: grey;
+  padding-left: 10px;
+}
+.todoList .add-box input:-ms-input-placeholder {
+  color: grey;
+  padding-left: 10px;
+}
+.todoList .add-box input::placeholder {
+  color: grey;
+  padding-left: 10px;
+}
+.todoList .add-box a {
+  width: 40px;
+  height: 39px;
+  right: 4px;
+  top: 4px;
+  position: absolute;
+  background: #333333;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 50px;
+}
+.todoList .add-box a img {
+  width: 20px;
+  height: 20px;
+}
+.todoList .noTodo p {
+  margin-left: 95px;
+  margin-top: 20px;
+}
+.todoList .noTodo div > img {
+  width: 240px;
+  height: 250px;
+  margin-left: 40px;
+}
+.todoList .list {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  width: 311px;
+  margin: 0 32px 36px 32px;
+}
+.todoList .list .tab {
+  display: flex;
+  justify-content: space-evenly;
+  height: 50px;
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #9F9A91;
+}
+.todoList .list .tab li {
+  width: 100%;
+  text-align: center;
+  margin-top: 16px;
+  border-bottom: 2px solid #EFEFEF;
+}
+.todoList .list .tab li.active {
+  border-bottom: 2px solid #333333;
+  color: #333333;
+}
+.todoList .list .todowhat .checkbox:hover a {
+  display: inline-block;
+}
+.todoList .list .todowhat .checkbox {
+  width: 310px;
+  display: block;
+  margin-top: 1rem;
+  position: relative;
+}
+.todoList .list .todowhat .checkbox input {
+  margin-left: 1rem;
+  width: 20px;
+  height: 20px;
+}
+.todoList .list .todowhat .checkbox input:checked + span {
+  text-decoration: line-through;
+  color: grey;
+}
+.todoList .list .todowhat .checkbox span {
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  margin-left: 10px;
+}
+.todoList .list .todowhat .checkbox a {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.todoList .list .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.todoList .list .footer p {
+  width: 100%;
+  margin: 25px 30px 24px 16px;
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
+}
+.todoList .list .footer a {
+  width: 100%;
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #9F9A91;
+  text-align: center;
+}
+.todoList .list .footer a:hover {
+  color: red;
+}
+
+@media (min-width: 1024px) {
+  body {
+    background: linear-gradient(172.7deg, #FFD370 5.12%, #FFD370 53.33%, #FFD370 53.44%, #FFFFFF 53.45%, #FFFFFF 94.32%);
+  }
+  .todoList {
+    max-width: 1028px;
+    min-height: 736px;
+    margin: 0 auto;
+  }
+  .todoList .header {
+    display: flex;
+    margin: 0;
+    margin-right: 0;
+  }
+  .todoList .header .left-bar {
+    width: 100%;
+    margin-left: 30px;
+    margin-top: 10px;
+  }
+  .todoList .header .left-bar .title {
+    width: 230px;
+    height: 37px;
+  }
+  .todoList .header .right-bar {
+    width: 100%;
+  }
+  .todoList .header .right-bar p {
+    display: block;
+    width: 96px;
+    height: 23px;
+    margin-top: 30px;
+    margin-left: 530px;
+  }
+  .todoList .header .right-bar .log-out {
+    margin-left: 664px;
+    top: 30px;
+  }
+  .todoList .list-box {
+    width: 500px;
+    height: 464px;
+    position: absolute;
+    left: 25%;
+    top: 15%;
+  }
+  .todoList .list-box .add-box {
+    width: 500px;
+  }
+  .todoList .list-box .add-box input {
+    width: 500px;
+  }
+  .todoList .list-box .noTodo {
+    background: none;
+  }
+  .todoList .list-box .noTodo p {
+    margin-left: 200px;
+  }
+  .todoList .list-box .noTodo img {
+    margin-left: 140px;
+    margin-top: 20px;
+  }
+  .todoList .list-box .list {
+    width: 500px;
+  }
+  .todoList .list-box .list .footer p {
+    margin-left: 25px;
+  }
+  .todoList .list-box .list .footer a {
+    margin-left: 100px;
+  }
+  .todoList .list-box .list .todowhat {
+    margin-left: 25px;
+    margin-top: 25px;
+    position: relative;
+  }
+  .todoList .list-box .list .todowhat .checkbox {
+    width: 475px;
+    display: block;
+    cursor: pointer;
+  }
+  .todoList .list-box .list .todowhat .checkbox:hover .delete {
+    display: inline-block;
+  }
+  .todoList .list-box .list .todowhat .delete {
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    font-size: 20px;
+    display: none;
+    width: 14px;
+    height: 14px;
+  }
+  .todoList .list-box .list .todowhat hr {
+    margin-top: 15px;
+  }
+  .todoList .list-box .list .todowhat input {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    cursor: pointer;
+  }
+  .todoList .list-box .list .todowhat input:checked + span {
+    text-decoration: line-through;
+    color: grey;
+  }
+  .todoList .list-box .list .todowhat span {
+    font-family: "Noto Sans TC";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 14px;
+    margin-left: 60px;
+    padding: 1rem 0;
+    display: block;
+    border-bottom: 2px solid #E5E5E5;
+  }
+}
+.change-page {
+  display: none;
+}
+
+.hide {
+  display: none;
+}/*# sourceMappingURL=style.css.map */
