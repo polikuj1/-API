@@ -205,7 +205,7 @@ function render(data) {
     <label class="checkbox" >
       <input type="checkbox" ${checkbox}/>
       <span>${item.content}</span>
-      <a href="#" class="delete"><img src="/img/Vector.png" alt=""></img></a>
+      <a href="#" class="delete"><img src="img/Vector.png" alt=""></img></a>
     </label>
     </li>`;
   })
