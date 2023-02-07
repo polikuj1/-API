@@ -30,6 +30,8 @@ const password = document.querySelector('.password');
 const checkPassword = document.querySelector('.check-password');
 const signUpPage_signup_btn = document.querySelector('.signUpPagesignup-btn');
 const emailIsError = document.querySelector('.warn-2');
+const storageKey = email.value + password.value;
+
 
 let signUpContent = {
   "user": {
@@ -57,6 +59,7 @@ function signUp(data) {
 
   //監聽點擊註冊按鈕，組物件，發送資料請求
 signUpPage_signup_btn.addEventListener('click',function() {
+  console.log(123);
   if (email.value === '' || password.value === '' || nickname.value === '' || checkPassword.value === '') {
     alert(`請完整填寫用戶資料`);
     return ;
@@ -73,6 +76,8 @@ signUpPage_signup_btn.addEventListener('click',function() {
   };
   //確認兩次密碼是否一致
   if (password.value.trim() !== checkPassword.value.trim()) return alert(`兩次密碼輸入不一樣`);
+  // 設定localStorage
+  localStorage.setItem(storageKey, nickname.value);
   //傳送資料
   signUp(signUpContent);
 })
