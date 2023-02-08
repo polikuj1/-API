@@ -30,16 +30,9 @@ const password = document.querySelector('.password');
 const checkPassword = document.querySelector('.check-password');
 const signUpPage_signup_btn = document.querySelector('.signUpPagesignup-btn');
 const emailIsError = document.querySelector('.warn-2');
-const storageKey = email.value + password.value;
 
 
-let signUpContent = {
-  "user": {
-    "email": '',
-    "nickname": '',
-    "password": ''
-  }
-};
+let signUpContent = {};
 
   //連接api
 function signUp(data) {
@@ -59,7 +52,6 @@ function signUp(data) {
 
   //監聽點擊註冊按鈕，組物件，發送資料請求
 signUpPage_signup_btn.addEventListener('click',function() {
-  console.log(123);
   if (email.value === '' || password.value === '' || nickname.value === '' || checkPassword.value === '') {
     alert(`請完整填寫用戶資料`);
     return ;
@@ -76,8 +68,6 @@ signUpPage_signup_btn.addEventListener('click',function() {
   };
   //確認兩次密碼是否一致
   if (password.value.trim() !== checkPassword.value.trim()) return alert(`兩次密碼輸入不一樣`);
-  // 設定localStorage
-  localStorage.setItem(storageKey, nickname.value);
   //傳送資料
   signUp(signUpContent);
 })
@@ -101,7 +91,7 @@ let loginContent = {
 function login(data) {
   axios.post(`${apiUrl}/users/sign_in`,data)
   .then((res)=>{
-    // console.log(res);
+    console.log(res,'使用者登入');
     axios.defaults.headers.common['Authorization'] = res.headers.authorization;
     // token = res.headers.authorization;
     loginPage.classList.toggle('change-page');
@@ -119,7 +109,7 @@ function login(data) {
 function getTodo() {
   axios.get(`${apiUrl}/todos`)
   .then((res)=> {
-    console.log(res);
+    console.log(res,'取得清單資料');
     data = res.data.todos;
     // if (data.length === 0 ) {
     //   noTodo.innerHTML = `<p>目前尚無代辦事項</p>
@@ -132,7 +122,7 @@ function getTodo() {
     //     return;
     //   }
       // noTodo.innerHTML = '';
-      render(data);//185行
+      render(data);//188行
       calList();
     })
   .catch(err=> console.log(err.response))
@@ -155,6 +145,12 @@ loginPage_loginButton.addEventListener('click',()=>{
       "password": loginPage_password.value.trim()
     }
   };
+  // 設定localStorage
+  if (keepLoginStatus) {
+    localStorage.setItem('Email', loginPage_email.value.trim());
+    localStorage.setItem('Psw', loginPage_password.value.trim());
+  }
+  // 清空欄位
   loginPage_email.value = '';
   loginPage_password.value = '';
   login(loginContent);
@@ -167,8 +163,10 @@ const logout = document.querySelector('.log-out');
 function logoutTodo() {
   axios.delete(`${apiUrl}/users/sign_out`)
   .then((res) => {
+    console.log(res,'使用者登出');
     todoList.classList.toggle('change-page');
     loginPage.classList.toggle('change-page');
+    localStorage.clear();
     alert(res.data.message);
   })
   .catch((err) => console.log(err.response))
@@ -224,7 +222,7 @@ addBtn.addEventListener('click',(e)=>{
   addNewList();
 });
 function addNewList() {
-  console.log(data);
+  console.log('新增代辦的按鈕觸發');
   //輸入不能為空白
   if (listInput.value.trim() === '') return alert('請輸入代辦事項');
   //傳送新增內容到伺服器
@@ -236,8 +234,8 @@ function addNewList() {
   })
   .then((res) => {
     //新增成功後，再次戳伺服器取得現在所有的清單內容，去渲染
-    console.log(res);
-    getTodo();//113行
+    console.log(res,'新增項目的請求');
+    getTodo();//109行
     listInput.value = '';
     //只要新增項目後，將狀態欄跳轉至全部
     tabLi.forEach((item)=> {
@@ -255,11 +253,12 @@ function addNewList() {
 list.addEventListener('click',(e)=> {
    //取得目前點擊到的清單id
   let id = e.target.closest('li').dataset.id;
-  console.log(id);
+  console.log(id,'刪除項目的data-id');
   if (e.target.nodeName === 'IMG') {
-    // 傳送刪除請求到伺服器，在重新取得最新資料，然後渲染
+    // 傳送刪除請求到伺服器，再重新取得最新資料，然後渲染
     axios.delete(`${apiUrl}/todos/${id}`)
     .then((res) => {
+      console.log(res,'刪除的請求發送');
       getTodo();
     })
     .catch((err) => {
@@ -331,3 +330,25 @@ listInput.addEventListener('keyup',(e)=>{
     addNewList();//205行
   }
 });
+
+
+// 監聽網頁重新整理，如果有使用者資料的話，自動幫她登入
+window.addEventListener('DOMContentLoaded', function() {
+  console.log('重新整理');
+  if (localStorage.getItem('Email') === null && localStorage.getItem('Psw') === null) return; 
+  let loginContent = {
+    "user": {
+      "email": localStorage.getItem('Email'),
+      "password": localStorage.getItem('Psw')
+    }
+  };
+  login(loginContent);
+});
+
+// 監聽是否要保持登入狀態
+let keepLoginStatus = false;
+const keepLoginCheck = document.querySelector('#keep')
+function KeepLogin(e) {
+  e.target.checked ? keepLoginStatus = true : keepLoginStatus = false;
+}
+keepLoginCheck.addEventListener('click',KeepLogin, false);
