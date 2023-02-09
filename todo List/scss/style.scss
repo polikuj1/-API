@@ -348,6 +348,10 @@ body {
         border-radius: 10px;
         margin: 0 10px 0 20px;
       }
+      input:focus {
+        // border: 1px solid red;
+        outline: #D87355;
+      }
     }
     .box-4 {
       display: flex;

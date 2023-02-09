@@ -335,6 +335,9 @@ body {
   border-radius: 10px;
   margin: 0 10px 0 20px;
 }
+.signUpPage .form-2 .box-3 input:focus {
+  outline: #D87355;
+}
 .signUpPage .form-2 .box-4 {
   display: flex;
   flex-direction: column;
@@ -468,10 +471,6 @@ body {
   line-height: 23px;
 }
 .todoList .add-box input::-moz-placeholder {
-  color: grey;
-  padding-left: 10px;
-}
-.todoList .add-box input:-ms-input-placeholder {
   color: grey;
   padding-left: 10px;
 }

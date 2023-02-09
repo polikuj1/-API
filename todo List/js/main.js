@@ -34,7 +34,7 @@ const emailIsError = document.querySelector('.warn-2');
 
 let signUpContent = {};
 
-  //連接api
+//連接api
 function signUp(data) {
   axios.post(`${apiUrl}/users`,data)
   .then((res) => {
@@ -50,15 +50,23 @@ function signUp(data) {
   checkPassword.value = '';
 }
 
-  //監聽點擊註冊按鈕，組物件，發送資料請求
+//監聽點擊註冊按鈕，組物件，發送資料請求
 signUpPage_signup_btn.addEventListener('click',function() {
+  // 正規表達式，驗證信箱格式
+  let regex = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
+  let oh = regex.test(email.value);
+  if (!oh) return alert('信箱格式錯誤');
   if (email.value === '' || password.value === '' || nickname.value === '' || checkPassword.value === '') {
     alert(`請完整填寫用戶資料`);
     return ;
   }
   //密碼不能低於六位數
   let pswLength = password.value.length;
-  if ( pswLength < 6) return alert('密碼不能小於六位數');
+  if ( pswLength < 6) {
+    password.focus(); 
+    alert('密碼不能小於六位數');
+    return;
+  } 
   let signUpContent = {
     "user": {
       "email": email.value.trim(),
