@@ -55,18 +55,26 @@ signUpPage_signup_btn.addEventListener('click',function() {
   // 正規表達式，驗證信箱格式
   let regex = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
   let oh = regex.test(email.value);
-  if (!oh) return alert('信箱格式錯誤');
+  if (!oh) {
+    alert('信箱格式錯誤');
+    email.classList.add('warn-border');
+    return
+  } else {
+    email.classList.remove('warn-border');
+  }
   if (email.value === '' || password.value === '' || nickname.value === '' || checkPassword.value === '') {
+    
     alert(`請完整填寫用戶資料`);
     return ;
   }
   //密碼不能低於六位數
   let pswLength = password.value.length;
-  if ( pswLength < 6) {
+  let pswRegex = /.*[A-Z]+.*[0-9]+.*|.*[0-9]+.*[A-Z]+.*/;
+  if ( pswLength < 6 || !pswRegex.test(password.value)) {
     password.focus(); 
-    alert('密碼不能小於六位數');
+    alert('密碼不能小於六位數,且至少一個英文大寫字母');
     return;
-  } 
+  }
   let signUpContent = {
     "user": {
       "email": email.value.trim(),
