@@ -176,10 +176,10 @@ loginPage_loginButton.addEventListener('click',()=>{
       "password": loginPage_password.value.trim()
     }
   };
-  // 設定localStorage
+  // 設定sessionStorage
   if (keepLoginStatus) {
-    localStorage.setItem('Email', loginPage_email.value.trim());
-    localStorage.setItem('Psw', loginPage_password.value.trim());
+    sessionStorage.setItem('Email', loginPage_email.value.trim());
+    sessionStorage.setItem('Psw', loginPage_password.value.trim());
   }
   // 清空欄位
   loginPage_email.value = '';
@@ -197,7 +197,7 @@ function logoutTodo() {
     console.log(res,'使用者登出');
     todoList.classList.toggle('change-page');
     loginPage.classList.toggle('change-page');
-    localStorage.clear();
+    sessionStorage.clear();
     modalText.textContent = res.data.message;
     modalWarn.classList.add('isShow');
     // alert(res.data.message);
@@ -402,11 +402,11 @@ listInput.addEventListener('keyup',(e)=>{
 // 監聽網頁重新整理，如果有使用者資料的話，自動幫她登入
 window.addEventListener('DOMContentLoaded', function() {
   console.log('重新整理');
-  if (localStorage.getItem('Email') === null && localStorage.getItem('Psw') === null) return; 
+  if (sessionStorage.getItem('Email') === null && sessionStorage.getItem('Psw') === null) return; 
   let loginContent = {
     "user": {
-      "email": localStorage.getItem('Email'),
-      "password": localStorage.getItem('Psw')
+      "email": sessionStorage.getItem('Email'),
+      "password": sessionStorage.getItem('Psw')
     }
   };
   login(loginContent);
