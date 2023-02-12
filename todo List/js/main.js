@@ -30,7 +30,9 @@ const password = document.querySelector('.password');
 const checkPassword = document.querySelector('.check-password');
 const signUpPage_signup_btn = document.querySelector('.signUpPagesignup-btn');
 const emailIsError = document.querySelector('.warn-2');
-
+const modalWarn = document.querySelector('.modal-warn');
+const modalCloseBtn = document.querySelector('.modal-warn .wrap button');
+const modalText = document.querySelector('.modal-warn .wrap p');
 
 let signUpContent = {};
 
@@ -41,7 +43,9 @@ function signUp(data) {
     axios.defaults.headers.common['Authorization'] = res.headers.authorization;
     loginPage.classList.toggle('change-page');
     signupPage.classList.toggle('change-page');
-    alert(`註冊成功，請重新登入`);
+    modalText.textContent = '註冊成功，請重新登入';
+    modalWarn.classList.add('isShow');
+    // alert(`註冊成功，請重新登入`);
   })
   .catch((err)=> alert(err.response.data.error[0]));
   email.value = '';
@@ -52,27 +56,27 @@ function signUp(data) {
 
 //監聽點擊註冊按鈕，組物件，發送資料請求
 signUpPage_signup_btn.addEventListener('click',function() {
+  // 確認所有資料已經填寫
+  if (email.value === '' || password.value === '' || nickname.value === '' || checkPassword.value === '') {
+    modalText.textContent = '請完整填寫用戶資料';
+    modalWarn.classList.add('isShow');
+    return ;
+  }
   // 正規表達式，驗證信箱格式
   let regex = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
   let oh = regex.test(email.value);
   if (!oh) {
-    alert('信箱格式錯誤');
-    email.classList.add('warn-border');
-    return
-  } else {
-    email.classList.remove('warn-border');
-  }
-  if (email.value === '' || password.value === '' || nickname.value === '' || checkPassword.value === '') {
-    
-    alert(`請完整填寫用戶資料`);
-    return ;
+    modalText.textContent = '信箱格式有誤';
+    modalWarn.classList.add('isShow');
+    return;
   }
   //密碼不能低於六位數
   let pswLength = password.value.length;
   let pswRegex = /.*[A-Z]+.*[0-9]+.*|.*[0-9]+.*[A-Z]+.*/;
   if ( pswLength < 6 || !pswRegex.test(password.value)) {
     password.focus(); 
-    alert('密碼不能小於六位數,且至少一個英文大寫字母');
+    modalText.textContent = '密碼不能小於六位數,且至少一個英文大寫字母';
+    modalWarn.classList.add('isShow');
     return;
   }
   let signUpContent = {
@@ -83,7 +87,11 @@ signUpPage_signup_btn.addEventListener('click',function() {
     }
   };
   //確認兩次密碼是否一致
-  if (password.value.trim() !== checkPassword.value.trim()) return alert(`兩次密碼輸入不一樣`);
+  if (password.value.trim() !== checkPassword.value.trim()) {
+    modalText.textContent = '兩次密碼輸入不一樣';
+    modalWarn.classList.add('isShow');
+    return;
+  }
   //傳送資料
   signUp(signUpContent);
 })
@@ -116,7 +124,10 @@ function login(data) {
     whosTodo.textContent = `${res.data.nickname}的代辦`;
     getTodo();
   })
-  .catch((err)=> alert(err.response.data.message))
+  .catch((err)=> {
+    modalText.textContent = err.response.data.message;
+    modalWarn.classList.add('isShow');
+  })
 }
 
 
@@ -154,7 +165,11 @@ function calList() {
 
   //監聽登入按鈕
 loginPage_loginButton.addEventListener('click',()=>{
-  if (loginPage_email.value === '' || loginPage_password.value === '') return alert('請輸入信箱和密碼');
+  if (loginPage_email.value === '' || loginPage_password.value === '') {
+    modalText.textContent = '請輸入信箱和密碼';
+    modalWarn.classList.add('isShow');
+    return;
+  }
   let loginContent = {
     "user": {
       "email": loginPage_email.value.trim(),
@@ -183,7 +198,9 @@ function logoutTodo() {
     todoList.classList.toggle('change-page');
     loginPage.classList.toggle('change-page');
     localStorage.clear();
-    alert(res.data.message);
+    modalText.textContent = res.data.message;
+    modalWarn.classList.add('isShow');
+    // alert(res.data.message);
   })
   .catch((err) => console.log(err.response))
 }
@@ -240,7 +257,11 @@ addBtn.addEventListener('click',(e)=>{
 function addNewList() {
   console.log('新增代辦的按鈕觸發');
   //輸入不能為空白
-  if (listInput.value.trim() === '') return alert('請輸入代辦事項');
+  if (listInput.value.trim() === '') {
+    modalText.textContent = '請輸入代辦事項';
+    modalWarn.classList.add('isShow');
+    return;
+  }
   //傳送新增內容到伺服器
   axios.post(`${apiUrl}/todos`,{
     "todo": {
@@ -368,3 +389,11 @@ function KeepLogin(e) {
   e.target.checked ? keepLoginStatus = true : keepLoginStatus = false;
 }
 keepLoginCheck.addEventListener('click',KeepLogin, false);
+
+
+//modal的監聽關閉
+modalWarn.addEventListener('click',(e) => {
+  if (e.target.getAttribute('class') === 'wrap' || 
+      e.target.nodeName === 'P') return
+  modalWarn.classList.remove('isShow');
+})
