@@ -358,40 +358,6 @@ body {
   margin: 0 10px 0 20px;
 }
 
-.modal-warn {
-  background-color: #AAA;
-  width: 100%;
-  height: 700px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.8;
-  display: none;
-}
-.modal-warn .wrap {
-  background-color: white;
-  width: 50%;
-  height: auto;
-  margin: 0px auto;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  font-size: 25px;
-  font-weight: bold;
-}
-.modal-warn .wrap button {
-  position: absolute;
-  right: 0;
-  top: 0;
-  margin: 10px;
-}
-
-.isShow {
-  display: block;
-}
-
 @media (min-width: 1024px) {
   .signUpPage {
     max-width: 1024px;
@@ -665,7 +631,7 @@ body {
   }
   .todoList .list-box {
     width: 500px;
-    height: 464px;
+    height: auto;
     position: absolute;
     left: 25%;
     top: 15%;
@@ -688,6 +654,7 @@ body {
   }
   .todoList .list-box .list {
     width: 500px;
+    margin-bottom: 30px;
   }
   .todoList .list-box .list .footer p {
     margin-left: 25px;
@@ -749,4 +716,38 @@ body {
 
 .hide {
   display: none;
+}
+
+.modal-warn {
+  background-color: #AAA;
+  width: 100%;
+  height: 700px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+  display: none;
+}
+.modal-warn .wrap {
+  background-color: white;
+  width: 50%;
+  height: auto;
+  margin: 0px auto;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 25px;
+  font-weight: bold;
+}
+.modal-warn .wrap button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 10px;
+}
+
+.isShow {
+  display: block;
 }/*# sourceMappingURL=style.css.map */

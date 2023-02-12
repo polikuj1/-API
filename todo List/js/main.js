@@ -345,18 +345,48 @@ tab.addEventListener('click',function(e) {
 
 //清除已完成項目
 clearFinished.addEventListener('click',(e)=>{
-  if (confirm('確定要刪除已完成的項目嗎') === true) {
-    data.forEach((item)=>{
-      if (item.completed_at !== null) {
-        axios.delete(`${apiUrl}/todos/${item.id}`)
-        .then((res)=> {
-          console.log(res);
-          getTodo();
-        })
-        .catch(err=>console.log(err.response))
+  //使用sweetAlert套件，彈跳視窗效果
+  Swal.fire({
+    title: '你要清除已經完成的項目嗎?',
+    // text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: '是，我要刪除!',
+    cancelButtonText: '取消'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      data.forEach((item)=>{
+        if (item.completed_at !== null) {
+          axios.delete(`${apiUrl}/todos/${item.id}`)
+          .then((res)=> {
+            console.log(res);
+            getTodo();
+          })
+          .catch(err=>console.log(err.response))
+        }
+      })
+      Swal.fire(
+      {
+        title: '刪除成功',
+        icon: 'success',
       }
-    })
-  }
+      )
+    }
+  })
+  // if (confirm('確定要刪除已完成的項目嗎') === true) {
+  //   data.forEach((item)=>{
+  //     if (item.completed_at !== null) {
+  //       axios.delete(`${apiUrl}/todos/${item.id}`)
+  //       .then((res)=> {
+  //         console.log(res);
+  //         getTodo();
+  //       })
+  //       .catch(err=>console.log(err.response))
+  //     }
+  //   })
+  // }
 })
 
 
